@@ -1,0 +1,79 @@
+// Define variables to override default ones
+@import "variables";
+
+@import "node_modules/spectre.css/src/mixins";
+@import "node_modules/spectre.css/src/base";
+@import "node_modules/spectre.css/src/utilities";
+
+// Layout
+@import "node_modules/spectre.css/src/layout";
+@import "node_modules/spectre.css/src/navbar";
+
+// Import only the needed components
+@import "node_modules/spectre.css/src/buttons";
+@import "node_modules/spectre.css/src/forms";
+@import "node_modules/spectre.css/src/tabs";
+@import "node_modules/spectre.css/src/tooltips";
+@import "node_modules/spectre.css/src/toasts";
+
+html,
+body,
+.app {
+  height: 100%;
+}
+html {
+  font-size: 18px;
+}
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  @extend .form-input;
+  @extend .input-sm;
+}
+input[type="color"] {
+  cursor: pointer;
+  width: 24px;
+  vertical-align: middle;
+  border: none;
+  &::-webkit-color-swatch {
+    border: none;
+    border-radius: 4px;
+  }
+  &::-webkit-color-swatch-wrapper {
+    padding: 1px;
+    border-radius: 4px;
+    border: 1px solid $primary-color;
+  }
+}
+select {
+  @extend .form-select;
+  @extend .select-sm;
+}
+.layer {
+  &:hover {
+    outline: 1px solid #ddd !important;
+  }
+}
+.g-active {
+  outline: 1px solid #2196f3 !important;
+  &:hover {
+    outline: 1px solid #2196f3 !important;
+  }
+  &::after {
+    content: attr(data-title);
+    background: #2196f3;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 5px;
+    font-size: 12px;
+    border-radius: 0 0 0 4px;
+  }
+}
