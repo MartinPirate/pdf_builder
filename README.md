@@ -28,7 +28,3 @@ npm run dev
 saves the template in PDF form
 ```
 
-## using Docker: `run the docker image`
-
-```
-```
